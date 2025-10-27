@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Nahi Group Maroc - Expert en nettoyage professionnel à Casablanca. Services de nettoyage de bureaux, maisons, appartements, hôtels et immeubles.">
+    <meta name="keywords"
+        content="nettoyage Casablanca, nettoyage bureaux, nettoyage maisons, femme de ménage, nettoyage professionnel Maroc">
+    <meta name="author" content="Nahi Group Maroc">
+    <meta property="og:title" content="Nahi Group Maroc - Services de Nettoyage Professionnel">
+    <meta property="og:description" content="Votre expert en nettoyage à Casablanca">
+    <meta property="og:type" content="website">
+    <title>Nahi Group Maroc - Services de Nettoyage Professionnel à Casablanca</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #0D92F4;
+            --secondary-color: #00A896;
+            --text-dark: #2C3E50;
+            --text-light: #5D6D7E;
+            --bg-light: #F8F9FA;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(227, 244, 244, 0.95) 0%, rgba(212, 233, 247, 0.95) 10%),
+                url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1600&q=80') center/cover;
+            /* background: linear-gradient(135deg, #E3F4F4 0%, #D4E9F7 100%); */
+            padding: 4rem 2rem;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(13, 146, 244, 0.3);
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--text-dark);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .service-content {
+            padding: 1.5rem;
+        }
+
+        .service-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .service-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .why-us {
+            background: var(--bg-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1rem;
+            align-items: start;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .feature-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+
+        .feature-text h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-text p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .testimonials {
+            background: white;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+        }
+
+        .testimonial-text {
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .contact {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-item svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 0.8rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-button {
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            aspect-ratio: 1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">NAHI GROUP MAROC</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#accueil" class="active">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Nahi Group Maroc</h1>
+                <p>Votre expert en nettoyage à Casablanca</p>
+                <a href="#contact" class="cta-button">Demander un devis</a>
+            </div>
+            <div class="hero-image">
+                <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="400" rx="20" fill="#E8F5E9" />
+                    <circle cx="200" cy="160" r="50" fill="#FFE0B2" />
+                    <rect x="150" y="210" width="100" height="120" rx="10" fill="#00A896" />
+                    <circle cx="200" cy="210" r="30" fill="white" />
+                    <rect x="160" y="240" width="80" height="90" rx="5" fill="#00A896" />
+                    <circle cx="170" cy="280" r="15" fill="#0D92F4" />
+                    <circle cx="230" cy="280" r="15" fill="#0D92F4" />
+                    <path d="M 180 320 Q 200 330 220 320" stroke="#0D92F4" stroke-width="3" fill="none" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <h2 class="section-title">Nos services principaux</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <svg width="100%" height="200" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="300" fill="#E3F4F4" />
+                    <rect x="100" y="80" width="200" height="150" rx="10" fill="#0D92F4" opacity="0.3" />
+                    <circle cx="200" cy="120" r="30" fill="#00A896" />
+                </svg>
+                <div class="service-content">
+                    <h3>Nettoyage de bureaux</h3>
+                    <p>Service professionnel pour maintenir vos espaces de travail propres et accueillants.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <svg width="100%" height="200" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="300" fill="#FFF9E3" />
+                    <rect x="80" y="60" width="240" height="180" rx="15" fill="#FFB84D" opacity="0.3" />
+                    <rect x="120" y="100" width="60" height="80" rx="5" fill="#00A896" />
+                </svg>
+                <div class="service-content">
+                    <h3>Nettoyage de maisons et appartements</h3>
+                    <p>Un chez-vous impeccable avec nos équipes expérimentées et discrètes.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <svg width="100%" height="200" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="300" fill="#F3E5F5" />
+                    <path d="M 100 250 L 200 80 L 300 250 Z" fill="#9C27B0" opacity="0.3" />
+                    <rect x="170" y="180" width="60" height="70" rx="5" fill="#00A896" />
+                </svg>
+                <div class="service-content">
+                    <h3>Nettoyage fin de chantier</h3>
+                    <p>Nettoyage post-construction pour rendre vos espaces prêts à l'utilisation.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <svg width="100%" height="200" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="300" fill="#FFE0E0" />
+                    <circle cx="200" cy="150" r="80" fill="#FF6B6B" opacity="0.3" />
+                    <circle cx="200" cy="150" r="40" fill="#00A896" />
+                </svg>
+                <div class="service-content">
+                    <h3>Femme de ménage à domicile</h3>
+                    <p>Personnel qualifié pour l'entretien régulier de votre domicile.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <svg width="100%" height="200" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="300" fill="#E0F7FA" />
+                    <rect x="100" y="80" width="200" height="140" rx="10" fill="#00BCD4" opacity="0.3" />
+                    <rect x="150" y="120" width="100" height="60" rx="5" fill="#00A896" />
+                </svg>
+                <div class="service-content">
+                    <h3>Nettoyage d'hôtels</h3>
+                    <p>Solutions professionnelles adaptées aux exigences de l'hôtellerie.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <svg width="100%" height="200" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="300" fill="#F1F8E9" />
+                    <rect x="80" y="60" width="240" height="180" rx="10" fill="#8BC34A" opacity="0.3" />
+                    <rect x="140" y="100" width="120" height="100" rx="5" fill="#00A896" />
+                </svg>
+                <div class="service-content">
+                    <h3>Nettoyage d'immeubles</h3>
+                    <p>Entretien complet des parties communes et espaces résidentiels.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section why-us">
+        <h2 class="section-title">Pourquoi nous choisir ?</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                    </svg>
+                </div>
+                <div class="feature-text">
+                    <h3>Équipe professionnelle et expérimentée</h3>
+                    <p>Personnel formé et qualifié pour tous types de nettoyage</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                    </svg>
+                </div>
+                <div class="feature-text">
+                    <h3>Produits écologiques et sécurité assurée</h3>
+                    <p>Utilisation de produits respectueux de l'environnement</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+                    </svg>
+                </div>
+                <div class="feature-text">
+                    <h3>Intervention rapide et flexible</h3>
+                    <p>Disponibilité selon vos besoins et horaires</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+                    </svg>
+                </div>
+                <div class="feature-text">
+                    <h3>Tarifs compétitifs</h3>
+                    <p>Meilleur rapport qualité-prix à Casablanca</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section testimonials">
+        <h2 class="section-title">Témoignages clients</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">S</div>
+                    <div>
+                        <div class="testimonial-name">Sarah L.</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Grâce à Nahi Group Maroc, mon bureau est toujours impeccablement propre.
+                    Une équipe efficace et fiable!"</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">M</div>
+                    <div>
+                        <div class="testimonial-name">Mohammed K.</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Service excellent pour le nettoyage de notre immeuble. Personnel
+                    professionnel et ponctuel."</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">A</div>
+                    <div>
+                        <div class="testimonial-name">Amina B.</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Ma maison n'a jamais été aussi propre! Je recommande vivement Nahi Group
+                    Maroc."</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="galerie" class="section">
+        <h2 class="section-title">Galerie</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <svg width="100%" height="100%" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="300" height="300" fill="#E3F4F4" />
+                    <rect x="50" y="80" width="200" height="150" rx="10" fill="#0D92F4" opacity="0.5" />
+                    <text x="150" y="160" text-anchor="middle" fill="#0D92F4" font-size="18"
+                        font-weight="bold">Bureau</text>
+                </svg>
+            </div>
+            <div class="gallery-item">
+                <svg width="100%" height="100%" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="300" height="300" fill="#FFF9E3" />
+                    <rect x="50" y="80" width="200" height="150" rx="10" fill="#FFB84D" opacity="0.5" />
+                    <text x="150" y="160" text-anchor="middle" fill="#FFB84D" font-size="18"
+                        font-weight="bold">Maison</text>
+                </svg>
+            </div>
+            <div class="gallery-item">
+                <svg width="100%" height="100%" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="300" height="300" fill="#F3E5F5" />
+                    <rect x="50" y="80" width="200" height="150" rx="10" fill="#9C27B0" opacity="0.5" />
+                    <text x="150" y="160" text-anchor="middle" fill="#9C27B0" font-size="18"
+                        font-weight="bold">Hôtel</text>
+                </svg>
+            </div>
+            <div class="gallery-item">
+                <svg width="100%" height="100%" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="300" height="300" fill="#E0F7FA" />
+                    <rect x="50" y="80" width="200" height="150" rx="10" fill="#00BCD4" opacity="0.5" />
+                    <text x="150" y="160" text-anchor="middle" fill="#00BCD4" font-size="18"
+                        font-weight="bold">Immeuble</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <h2 class="section-title">Contactez-nous</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                    </svg>
+                    <div>
+                        <h3>Adresse</h3>
+                        <p>Casablanca, Maroc</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                    </svg>
+                    <div>
+                        <h3>Téléphone</h3>
+                        <p>+212 XXX-XXXXXX</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg>
+                    <div>
+                        <h3>Email</h3>
+                        <p>contact@nahigroupmaroc.ma</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+                    </svg>
+                    <div>
+                        <h3>Horaires</h3>
+                        <p>Lun - Sam: 8h - 18h</p>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Nom complet</label>
+                    <input type="text" id="name" name="name" required placeholder="Votre nom">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Téléphone</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+212 XXX-XXXXXX">
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Service souhaité</label>
+                    <select id="service" name="service" required
+                        style="padding: 0.8rem; border: none; border-radius: 8px; font-size: 1rem;">
+                        <option value="">Sélectionnez un service</option>
+                        <option value="bureaux">Nettoyage de bureaux</option>
+                        <option value="maisons">Nettoyage de maisons/appartements</option>
+                        <option value="chantier">Nettoyage fin de chantier</option>
+                        <option value="domicile">Femme de ménage à domicile</option>
+                        <option value="hotels">Nettoyage d'hôtels</option>
+                        <option value="immeubles">Nettoyage d'immeubles</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="Décrivez vos besoins..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">Envoyer la demande</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Nahi Group Maroc. Tous droits réservés.</p>
+        <p>Expert en nettoyage professionnel à Casablanca</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('navLinks').classList.remove('active');
+                }
+            });
+        });
+
+        // Active nav link on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section[id]');
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Form submission
+        function handleSubmit(e) {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData);
+
+            // Simulate form submission
+            alert('Merci pour votre demande! Nous vous contactons bientôt.\n\nNom: ' + data.name + '\nEmail: ' + data.email);
+            e.target.reset();
+        }
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .feature-item, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>

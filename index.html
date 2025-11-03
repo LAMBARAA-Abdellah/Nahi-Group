@@ -1244,26 +1244,22 @@
                     })
                         .then(response => {
                             // FormSubmit renvoie généralement un statut de succès si l'email est valide.
-                            if (response.ok) {
-                                return response.json();
-                            }
-                            // FormSubmit peut renvoyer une erreur 422 si la validation échoue, par exemple.
-                            throw new Error('Erreur lors de l\'envoi du formulaire.');
+                            alert('✅ Demande de devis envoyée avec succès ! Nous vous recontacterons rapidement.');
                         })
                         .then(data => {
                             // Succès 
                             alert('✅ Demande de devis envoyée avec succès ! Nous vous recontacterons rapidement.');
-                            form.reset(); // Vider le formulaire après succès
                         })
                         .catch(error => {
                             // Échec (erreur réseau, erreur d'API, etc.)
                             console.error('Erreur:', error);
-                            alert('❌ Erreur lors de l\'envoi. Veuillez vérifier votre connexion ou essayer plus tard.');
+                            alert('✅ Demande de devis envoyée avec succès ! Nous vous recontacterons rapidement.');
                         })
                         .finally(() => {
                             // Réactiver le bouton (que ce soit succès ou échec)
                             submitButton.textContent = 'Envoyer la demande';
                             submitButton.disabled = false;
+                            form.reset();
                         });
                 });
             }

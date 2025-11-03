@@ -1104,7 +1104,8 @@
 
             </div>
 
-            <form class="contact-form" action="https://formsubmit.co/Nahigroupmaroc@gmail.com" method="POST">
+            <form class="contact-form" id="contactForm" action="https://formsubmit.co/abdellah17lambaraa@gmail.com"
+                method="POST">
                 <div class="form-group">
                     <label for="name">Nom complet</label>
                     <input type="text" id="name" name="name" required placeholder="Votre nom">
@@ -1217,6 +1218,55 @@
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contactForm');
+
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault(); // Empêche l'envoi classique du formulaire et le rechargement de la page
+
+                    const formActionURL = this.action;
+                    const formData = new FormData(this);
+                    const submitButton = this.querySelector('.submit-button');
+
+                    // Désactiver le bouton pendant l'envoi
+                    submitButton.textContent = 'Envoi...';
+                    submitButton.disabled = true;
+
+                    // Envoi des données via l'API Fetch
+                    fetch(formActionURL, {
+                        method: 'POST',
+                        body: formData,
+                        // Ne définissez PAS l'en-tête 'Content-Type' lorsque vous utilisez FormData, 
+                        // le navigateur le gère automatiquement.
+                    })
+                        .then(response => {
+                            // FormSubmit renvoie généralement un statut de succès si l'email est valide.
+                            if (response.ok) {
+                                return response.json();
+                            }
+                            // FormSubmit peut renvoyer une erreur 422 si la validation échoue, par exemple.
+                            throw new Error('Erreur lors de l\'envoi du formulaire.');
+                        })
+                        .then(data => {
+                            // Succès 
+                            alert('✅ Demande de devis envoyée avec succès ! Nous vous recontacterons rapidement.');
+                            form.reset(); // Vider le formulaire après succès
+                        })
+                        .catch(error => {
+                            // Échec (erreur réseau, erreur d'API, etc.)
+                            console.error('Erreur:', error);
+                            alert('❌ Erreur lors de l\'envoi. Veuillez vérifier votre connexion ou essayer plus tard.');
+                        })
+                        .finally(() => {
+                            // Réactiver le bouton (que ce soit succès ou échec)
+                            submitButton.textContent = 'Envoyer la demande';
+                            submitButton.disabled = false;
+                        });
+                });
+            }
         });
     </script>
 </body>

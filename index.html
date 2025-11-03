@@ -460,6 +460,158 @@
             transform: scale(1.15);
         }
 
+        /* --- Contact Section Styles --- */
+        .section.contact {
+            padding: 4rem 2rem;
+            /* More vertical space */
+            background: #f9f9f9;
+            /* Light background for contrast */
+        }
+
+        .contact-content {
+            display: grid;
+            /* Two-column layout: Details on the left (smaller), Form on the right (larger) */
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+            /* Space between the two columns */
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* --- Contact Info Styles (Left Column) --- */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 1.5rem;
+            background: #fff;
+            /* White background for the info box */
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            /* Subtle shadow for depth */
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            /* Align icon and text to the top */
+            gap: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed #eee;
+            /* Light separation line */
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+            /* No line under the last item */
+            padding-bottom: 0;
+        }
+
+        .contact-item h3 {
+            font-size: 1rem;
+            color: var(--primary-color, #007bff);
+            /* Use your primary color for titles */
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .contact-item p {
+            font-size: 1.1rem;
+            color: var(--text-dark, #333);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .contact-item svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--primary-color, #007bff);
+            /* Match icon color to primary color */
+            flex-shrink: 0;
+            /* Prevent the icon from shrinking */
+            margin-top: 4px;
+            /* Slight adjustment for visual alignment */
+        }
+
+        /* --- Form Styles (Right Column) --- */
+        .contact-form {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-dark, #333);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            /* Rounded corners */
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            box-sizing: border-box;
+            /* Crucial for padding/border inclusion in width */
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary-color, #007bff);
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+            /* Focus ring */
+            outline: none;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        /* --- Submit Button --- */
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary-color, #007bff);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        .submit-button:hover {
+            background: var(--darker-primary-color, #0056b3);
+        }
+
+        .submit-button:active {
+            transform: translateY(1px);
+            /* Little press effect */
+        }
+
+        /* --- Responsiveness (Mobile) --- */
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+                /* Stack columns vertically on smaller screens */
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -893,22 +1045,66 @@
     </section>
 
     <section id="contact" class="section contact">
-        <h2 class="section-title">Contactez-nous</h2>
+        <h2 class="section-title" style="color: #333;">Contactez-nous</h2>
         <div class="contact-content">
+
             <div class="contact-info">
+
                 <div class="contact-item">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
-                    </svg>
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3>Adresse</h3>
+                        <p>IMM 9 RUE RYAD 3 Etage Appt 5 HASSAN RABAT</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 13H11V7h1.5v8z" />
+                        </svg>
+                    </div>
                     <div>
                         <h3>Horaires</h3>
                         <p>Lun - Sam: 8h - 18h</p>
                     </div>
                 </div>
+
+                <div class="contact-item">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3>Email</h3>
+                        <p>Nahigroupmaroc@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3>Téléphone</h3>
+                        <p>0661969071</p>
+                    </div>
+                </div>
+
             </div>
 
-            <form class="contact-form" action="https://formsubmit.co/abdellah17lambaraa@gmail.com" method="POST">
+            <form class="contact-form" action="https://formsubmit.co/Nahigroupmaroc@gmail.com" method="POST">
                 <div class="form-group">
                     <label for="name">Nom complet</label>
                     <input type="text" id="name" name="name" required placeholder="Votre nom">
@@ -942,7 +1138,6 @@
                     <textarea id="message" name="message" required placeholder="Décrivez vos besoins..."></textarea>
                 </div>
 
-                <!-- FormSubmit Configuration -->
                 <input type="hidden" name="_subject" value="Nouvelle demande de devis - Nahi Group Maroc">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_template" value="table">

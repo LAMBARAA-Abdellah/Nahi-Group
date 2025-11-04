@@ -1414,6 +1414,25 @@
                 });
             }
         });
+        // JavaScript optionnel pour plus de contrôle
+        document.addEventListener('DOMContentLoaded', function () {
+            const clientsTrack = document.getElementById('clientsTrack');
+
+            // Optionnel: Dupliquer automatiquement les logos pour le défilement infini
+            if (clientsTrack) {
+                const logos = clientsTrack.innerHTML;
+                clientsTrack.innerHTML = logos + logos; // Double les logos
+            }
+
+            // Optionnel: Pause sur hover
+            clientsTrack.addEventListener('mouseenter', function () {
+                this.style.animationPlayState = 'paused';
+            });
+
+            clientsTrack.addEventListener('mouseleave', function () {
+                this.style.animationPlayState = 'running';
+            });
+        });
     </script>
 </body>
 

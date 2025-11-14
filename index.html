@@ -604,92 +604,6 @@
             /* Little press effect */
         }
 
-        /* Section Clients - Style */
-        .clients-section {
-            background: white;
-            /* padding: 4rem 0; */
-            overflow: hidden;
-        }
-
-        .clients-section .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2rem;
-            color: var(--text-dark);
-        }
-
-        .clients-slider {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            padding: 2rem 0;
-        }
-
-        .clients-track {
-            display: flex;
-            gap: 4rem;
-            animation: scroll 30s linear infinite;
-            width: fit-content;
-        }
-
-        .clients-track:hover {
-            animation-play-state: paused;
-        }
-
-        .client-logo {
-            flex-shrink: 0;
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: white;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1.5rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .client-logo:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 30px rgba(13, 146, 244, 0.2);
-        }
-
-        .client-logo img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            /* filter: grayscale(100%); */
-            transition: filter 0.3s;
-        }
-
-        .client-logo:hover img {
-            filter: grayscale(0%);
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .client-logo {
-                width: 100px;
-                height: 100px;
-                padding: 1.2rem;
-            }
-
-            .clients-track {
-                gap: 3rem;
-            }
-        }
-
         /* --- Responsiveness (Mobile) --- */
         @media (max-width: 768px) {
             .contact-content {
@@ -876,7 +790,8 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="./iamge2.jpg" alt="Professionnelle de nettoyage">
+                <img src="./iamge2.jpg"
+                    alt="Professionnelle de nettoyage">
             </div>
         </div>
     </section>
@@ -1101,83 +1016,7 @@
             </div>
         </div>
     </section>
-    <section class="clients-section">
-        <div class="section">
-            <h2 class="section-title">Nos Clients</h2>
-            <div class="clients-slider">
-                <div class="clients-track" id="clientsTrack">
-                    <!-- First set of logos -->
-                    <div class="client-logo">
-                        <img src="./clients/client1.jpg" alt="Client 1">
-                    </div>
-                    <div class="client-logo">
-                        <img src="./clients/client2.jpg" alt="Client 2">
-                    </div>
-                    <div class="client-logo">
-                        <img src="./clients/client3.jpg" alt="Client 3">
-                    </div>
-                    <div class="client-logo">
-                        <img src="./clients/client4.jpg" alt="Client 4">
-                    </div>
-                    <div class="client-logo">
-                        <img src="./clients/client5.jpg" alt="Client 5">
-                    </div>
-                    <div class="client-logo">
-                        <img src="./clients/client6.jpg" alt="Client 6">
-                    </div>
-                    <div class="client-logo">
-                        <img src="./clients/client7.jpg" alt="Client 7">
-                    </div>
-                    <div class="client-logo">
-                        <img src="./clients/client8.jpg" alt="Client 8">
-                    </div>
-                    <div class="client-logo">
-                        <img src="./clients/client9.jpg" alt="Client 9">
-                    </div>
-                    <div class="client-logo">
-                        <img src="./clients/client10.jpg" alt="Client 10">
-                    </div>
-                    <div class="client-logo">
-                        <img src="./clients/client11.jpg" alt="Client 11">
-                    </div>
-                    <!-- Duplicate set for seamless loop -->
-                    <div class="client-logo">
-                        <img src="./clients/client1.jpg" alt="Client 1">
-                    </div>
-                    <div class="client-logo">
-                        <img src="./clients/client2.jpg" alt="Client 2">
-                    </div>
-                    <div class="client-logo">
-                        <img src="./clients/client3.jpg" alt="Client 3">
-                    </div>
-                    <div class="client-logo">
-                        <img src="./clients/client4.jpg" alt="Client 4">
-                    </div>
-                    <div class="client-logo">
-                        <img src="./clients/client5.jpg" alt="Client 5">
-                    </div>
-                    <div class="client-logo">
-                        <img src="./clients/client6.jpg" alt="Client 6">
-                    </div>
-                    <div class="client-logo">
-                        <img src="./clients/client7.jpg" alt="Client 7">
-                    </div>
-                    <div class="client-logo">
-                        <img src="./clients/client8.jpg" alt="Client 8">
-                    </div>
-                    <div class="client-logo">
-                        <img src="./clients/client9.jpg" alt="Client 9">
-                    </div>
-                    <div class="client-logo">
-                        <img src="./clients/client10.jpg" alt="Client 10">
-                    </div>
-                    <div class="client-logo">
-                        <img src="./clients/client11.jpg" alt="Client 11">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
     <section id="galerie" class="section">
         <h2 class="section-title">Galerie</h2>
         <div class="gallery-grid">
@@ -1265,9 +1104,8 @@
 
             </div>
 
-            <form class="contact-form" id="contactForm" action="https://formsubmit.co/abdellah.lambaraa@um6p.ma"
+            <form class="contact-form" id="contactForm" action="https://formsubmit.co/Nahigroupmaroc@gmail.com"
                 method="POST">
-                <h1>lambaraa abdellah</h1>
                 <div class="form-group">
                     <label for="name">Nom complet</label>
                     <input type="text" id="name" name="name" required placeholder="Votre nom">
@@ -1420,25 +1258,6 @@
                         });
                 });
             }
-        });
-        // JavaScript optionnel pour plus de contrôle
-        document.addEventListener('DOMContentLoaded', function () {
-            const clientsTrack = document.getElementById('clientsTrack');
-
-            // Optionnel: Dupliquer automatiquement les logos pour le défilement infini
-            if (clientsTrack) {
-                const logos = clientsTrack.innerHTML;
-                clientsTrack.innerHTML = logos + logos; // Double les logos
-            }
-
-            // Optionnel: Pause sur hover
-            clientsTrack.addEventListener('mouseenter', function () {
-                this.style.animationPlayState = 'paused';
-            });
-
-            clientsTrack.addEventListener('mouseleave', function () {
-                this.style.animationPlayState = 'running';
-            });
         });
     </script>
 </body>

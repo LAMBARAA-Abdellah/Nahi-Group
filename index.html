@@ -51,12 +51,20 @@
         }
 
         :root {
-            --primary-color: #0D92F4;
-            --secondary-color: #00A896;
-            --accent-color: #00CFC1;
-            --text-dark: #2C3E50;
-            --text-light: #5D6D7E;
-            --bg-light: #E8F6F5;
+            /* Logo-based colors */
+            --primary-color: #0E3A5D;
+            /* Dark Blue */
+            --secondary-color: #1E5A8A;
+            /* Medium Blue */
+            --accent-color: #F7941D;
+            /* Orange */
+
+            /* Text */
+            --text-dark: #1F2D3D;
+            --text-light: #5F6F7E;
+
+            /* Backgrounds */
+            --bg-light: #F4F8FB;
             --white: #FFFFFF;
         }
 
@@ -176,7 +184,7 @@
         }
 
         .cta-button {
-            background: var(--primary-color);
+            background: linear-gradient(135deg, #0E3A5D, #1E5A8A);
             color: white;
             padding: 1rem 2.5rem;
             border: none;
@@ -265,6 +273,13 @@
             font-size: 1rem;
             color: var(--text-dark);
             font-weight: 500;
+        }
+
+        .stat-box h3,
+        .hero-contact p,
+        .nav-links a.active,
+        .nav-links a:hover {
+            color: var(--accent-color);
         }
 
         /* Responsive */
@@ -425,46 +440,7 @@
             line-height: 1.7;
         }
 
-        .contact {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: white;
-        }
-
-        .contact .section-title {
-            color: white;
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1.8rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .contact-item svg {
-            width: 24px;
-            height: 24px;
-            fill: white;
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .form-group {
+        .contac .form-group {
             display: flex;
             flex-direction: column;
         }
@@ -963,8 +939,8 @@
         </div>
     </section>
     <section id="about" class="section about">
-    <div class="about-content">
-        <!-- <div class="about-text"> -->
+        <div class="about-content">
+            <!-- <div class="about-text"> -->
             <h2 class="section-title">Qui sommes-nous ?</h2>
             <p>
                 <strong>Nahi Group Maroc</strong> est une société spécialisée dans les
@@ -979,12 +955,12 @@
             </p>
             <p>
                 Notre mission est simple : <strong>vous offrir des espaces propres,
-                sains et agréables</strong>, tout en assurant rapidité, flexibilité
+                    sains et agréables</strong>, tout en assurant rapidité, flexibilité
                 et satisfaction client.
             </p>
-        <!-- </div> -->
+            <!-- </div> -->
 
-        <!-- <div class="about-stats">
+            <!-- <div class="about-stats">
             <div class="stat-box">
                 <h3>+5 ans</h3>
                 <p>D’expérience</p>
@@ -998,8 +974,8 @@
                 <p>Engagement qualité</p>
             </div>
         </div> -->
-    </div>
-</section>
+        </div>
+    </section>
 
     <section id="services" class="section">
         <h2 class="section-title">Nos services principaux</h2>

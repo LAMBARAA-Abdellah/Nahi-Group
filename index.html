@@ -6,27 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- ✅ SEO de base -->
-    <title>Nahi Group Maroc - Services de Nettoyage Professionnel à Casablanca</title>
+    <title>Nahi Group Maroc - Services de Nettoyage et Sécurité Professionnels au Maroc</title>
     <meta name="description"
-        content="Nahi Group Maroc - Expert en nettoyage professionnel à Casablanca. Services de nettoyage de bureaux, maisons, appartements, hôtels et immeubles.">
+        content="Nahi Group Maroc - Services de Nettoyage et Sécurité Professionnels au Maroc. Services de nettoyage de bureaux, maisons, appartements, hôtels et immeubles, ainsi que des services de sécurité et gardiennage pour les villas. Contactez-nous pour un devis personnalisé.">
     <meta name="keywords"
-        content="nettoyage Casablanca, nettoyage bureaux, nettoyage maisons, femme de ménage, nettoyage professionnel Maroc, Nahi Group Maroc">
+        content="nettoyage maroc, nettoyage bureaux, nettoyage maisons, femme de ménage, nettoyage professionnel Maroc, Nahi Group Maroc, sécurité Maroc, gardiennage villas, services de sécurité, nettoyage hôtels, nettoyage immeubles">
     <meta name="author" content="Nahi Group Maroc">
     <meta name="robots" content="index, follow">
 
     <!-- ✅ Open Graph (pour Facebook, WhatsApp, LinkedIn) -->
-    <meta property="og:title" content="Nahi Group Maroc - Services de Nettoyage Professionnel à Casablanca">
+    <meta property="og:title" content="Nahi Group Maroc - Services de Nettoyage et Sécurité Professionnels au Maroc">
     <meta property="og:description"
         content="Expert en nettoyage professionnel au Maroc : bureaux, maisons, chantiers, hôtels et immeubles.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nahigroupmaroc.com">
-    <meta property="og:image" content="https://nahigroupmaroc.com/logoG.png">
+    <meta property="og:image" content="https://nahigroupmaroc.com/logo.jpeg">
 
     <!-- ✅ Twitter Card (pour les aperçus sur X / Twitter) -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Nahi Group Maroc - Services de Nettoyage Professionnel">
-    <meta name="twitter:description" content="Expert en nettoyage professionnel à Casablanca et partout au Maroc.">
-    <meta name="twitter:image" content="https://nahigroupmaroc.com/logoG.png">
+    <meta name="twitter:title" content="Nahi Group Maroc - Services de Nettoyage et Sécurité Professionnel">
+    <meta name="twitter:description"
+        content="Expert en nettoyage professionnel aux Maroc : bureaux, maisons, chantiers, hôtels et immeubles. Services de sécurité et gardiennage pour les villas.">
+    <meta name="twitter:image" content="https://nahigroupmaroc.com/logo.jpeg">
 
     <!-- ✅ Favicon / Logo de l'onglet -->
     <!-- ✅ Favicons -->
@@ -894,6 +895,194 @@
                 font-size: 40px
             }
         }
+
+        /* ===== CATEGORY BLOCK ===== */
+        .category-block {
+            margin-bottom: 4rem;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid;
+        }
+
+        .category-header.nettoyage {
+            border-color: var(--secondary);
+        }
+
+        .category-header.securite {
+            border-color: var(--accent);
+        }
+
+        .category-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .category-badge.nettoyage {
+            background: var(--blue-light);
+            color: var(--primary);
+        }
+
+        .category-badge.securite {
+            background: #FFF3E6;
+            color: #C4600A;
+        }
+
+        .category-badge svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .category-count {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* ===== SERVICES GRID ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+        }
+
+        /* Nettoyage: 5 cards → 3+2 layout */
+        .nettoyage-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+        }
+
+        /* Sécurité: 3 cards */
+        .securite-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+        }
+
+        /* ===== SERVICE CARD ===== */
+        .service-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .service-content {
+            padding: 1.5rem;
+        }
+
+        .service-content h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.7rem;
+            color: var(--text-dark);
+            line-height: 1.3;
+        }
+
+        .service-content p {
+            color: var(--text-light);
+            font-size: 0.93rem;
+            line-height: 1.65;
+        }
+
+        /* Color accent line on top of card */
+        .nettoyage .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 18px 18px 0 0;
+        }
+
+        .securite .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), #e67e00);
+            border-radius: 18px 18px 0 0;
+        }
+
+        /* Security checklist style */
+        .service-content .checklist {
+            list-style: none;
+            margin-top: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .service-content .checklist li {
+            font-size: 0.88rem;
+            color: var(--text-light);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.4rem;
+            line-height: 1.5;
+        }
+
+        .service-content .checklist li::before {
+            content: '✔';
+            color: var(--accent);
+            font-size: 0.8rem;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+
+            .nettoyage-grid,
+            .securite-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .nettoyage-grid,
+            .securite-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
     </style>
 </head>
 
@@ -903,7 +1092,7 @@
             <!-- <div class="logo">NAHI GROUP MAROC</div> -->
             <!-- logo image-->
             <!-- <div class="logo"> -->
-            <img src="./logoG.png" alt="Nahi Group Maroc Logo" style="height:60px;">
+            <img src="./images/logo.jpeg" alt="Nahi Group Maroc Logo" style="height:60px;">
             <!-- </div> -->
             <ul class="nav-links" id="navLinks">
                 <li><a href="#accueil" class="active">Accueil</a></li>
@@ -923,7 +1112,7 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1>Nahi Group Maroc</h1>
-                <h2>Services de Nettoyage</h2>
+                <h2>Services de Nettoyage et Sécurité</h2>
                 <!-- <p>Spécialisée dans les services de nettoyage professionnels destinés aux particuliers et aux
                     entreprises. Équipe expérimentée et équipée des meilleures technologies pour offrir un service de
                     qualité supérieure.</p> -->
@@ -935,7 +1124,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="./images/home.jpeg" alt="Professionnelle de nettoyage">
+                <img src="./images/home1.jpeg" alt="Professionnelle de nettoyage">
             </div>
         </div>
     </section>
@@ -945,19 +1134,13 @@
             <h2 class="section-title">Qui sommes-nous ?</h2>
             <p>
                 <strong>Nahi Group Maroc</strong> est une société spécialisée dans les
-                <strong>services de nettoyage professionnels</strong> destinée aux
+                <strong>services de nettoyage et de sécurité & gardiennage,</strong> destinée aux
                 particuliers et aux entreprises.
             </p>
             <p>
-                Grâce à une <strong>équipe expérimentée</strong> et à l’utilisation
-                d’<strong>équipements modernes</strong> et de produits respectueux de
-                l’environnement, nous garantissons un service de haute qualité,
-                fiable et conforme aux normes d’hygiène les plus strictes.
-            </p>
-            <p>
-                Notre mission est simple : <strong>vous offrir des espaces propres,
-                    sains et agréables</strong>, tout en assurant rapidité, flexibilité
-                et satisfaction client.
+                Grâce à une équipe qualifiée, expérimentée et formée aux standards professionnels, ainsi qu’à
+                l’utilisation d’équipements modernes et de produits respectueux de l’environnement, nous garantissons
+                des prestations de haute qualité, fiables et conformes aux normes les plus strictes.
             </p>
             <!-- </div> -->
 
@@ -978,69 +1161,141 @@
         </div>
     </section>
 
+
     <section id="services" class="section">
         <h2 class="section-title">Nos services principaux</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <img src="./images/bureau.jpeg" alt="Nettoyage de bureaux">
-                <div class="service-content">
-                    <h3>🧹 Nettoyage de bureaux</h3>
-                    <p>Confiez la propreté de vos espaces de travail à une équipe experte ! Nous assurons un nettoyage
-                        complet : dépoussiérage, désinfection des bureaux, nettoyage des vitres, aspiration des sols,
-                        entretien des sanitaires et désinfection des zones de contact.</p>
-                </div>
+
+        <!-- ========== NETTOYAGE ========== -->
+        <div class="category-block nettoyage">
+            <div class="category-header nettoyage">
+                <span class="category-badge nettoyage">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M3 3l18 18M8.5 8.5A5 5 0 0114 14M6 6a9 9 0 0012 12" />
+                    </svg>
+                    🧹 Nettoyage
+                </span>
+                <span class="category-count">5 prestations</span>
             </div>
 
-            <div class="service-card">
-                <img src="./images/maison.jpeg" alt="Nettoyage de maisons">
-                <div class="service-content">
-                    <h3>🧽 Nettoyage de maisons et appartements</h3>
-                    <p>Offrez à votre maison la propreté qu'elle mérite ! Nettoyage complet de toutes les pièces, lavage
-                        des sols et vitres, désinfection des sanitaires, entretien des terrasses. Service ponctuel ou
-                        régulier selon votre choix.</p>
-                </div>
-            </div>
+            <div class="nettoyage-grid">
 
-            <div class="service-card">
-                <img src="./images/chantier.jpeg" alt="Nettoyage fin de chantier">
-                <div class="service-content">
-                    <h3>🧹 Nettoyage fin de chantier</h3>
-                    <p>Après les travaux, place à la propreté ! Évacuation des gravats, nettoyage en profondeur des sols
-                        et murs, dépoussiérage complet, lavage et polissage des vitres, désinfection des sanitaires.
-                        Finition impeccable avant remise des clés.</p>
+                <div class="service-card">
+                    <img src="./images/bureau.jpeg" alt="Nettoyage de bureaux">
+                    <div class="service-content">
+                        <h3>🧹 Nettoyage de bureaux</h3>
+                        <p>Confiez la propreté de vos espaces de travail à une équipe experte ! Dépoussiérage,
+                            désinfection des bureaux, nettoyage des vitres, aspiration des sols, entretien des
+                            sanitaires et désinfection des zones de contact.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="service-card">
-                <img src="./images/ménage.jpeg" alt="Femme de ménage à domicile">
-                <div class="service-content">
-                    <h3>👩‍🧼 Femme de ménage à domicile</h3>
-                    <p>Des femmes de ménage expérimentées et de confiance pour un service sur mesure. Nettoyage complet
-                        des maisons et bureaux, lavage des sols et vitres, dépoussiérage, entretien de la cuisine et
-                        sanitaires, repassage selon vos besoins.</p>
+                <div class="service-card">
+                    <img src="./images/maison.jpeg" alt="Nettoyage de maisons">
+                    <div class="service-content">
+                        <h3>🧽 Nettoyage de maisons et appartements</h3>
+                        <p>Offrez à votre maison la propreté qu'elle mérite ! Nettoyage complet de toutes les pièces,
+                            lavage des sols et vitres, désinfection des sanitaires, entretien des terrasses. Service
+                            ponctuel ou régulier.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="service-card">
-                <img src="./images/hotels.jpeg" alt="Nettoyage d'hôtels">
-                <div class="service-content">
-                    <h3>🧹 Nettoyage d'hôtels</h3>
-                    <p>Offrez à vos clients une expérience impeccable ! Entretien quotidien des chambres, nettoyage des
-                        espaces communs, blanchisserie et gestion du linge, nettoyage des restaurants et cuisines.
-                        Désinfection selon les normes hôtelières.</p>
+                <div class="service-card">
+                    <img src="./images/chantier.jpeg" alt="Nettoyage fin de chantier">
+                    <div class="service-content">
+                        <h3>🧹 Nettoyage fin de chantier</h3>
+                        <p>Après les travaux, place à la propreté ! Évacuation des gravats, nettoyage en profondeur des
+                            sols et murs, dépoussiérage complet, lavage et polissage des vitres, désinfection des
+                            sanitaires.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="service-card">
-                <img src="./images/immeubles.jpeg" alt="Nettoyage d'immeubles">
-                <div class="service-content">
-                    <h3>🏢 Nettoyage d'immeubles</h3>
-                    <p>Entretien professionnel des parties communes et espaces résidentiels. Nettoyage des halls,
-                        escaliers, ascenseurs, cours et parkings. Service régulier pour maintenir votre immeuble
-                        toujours propre et accueillant.</p>
+                <div class="service-card">
+                    <img src="./images/ménage.jpeg" alt="Femme de ménage à domicile">
+                    <div class="service-content">
+                        <h3>👩‍🧼 Femme de ménage à domicile</h3>
+                        <p>Des femmes de ménage expérimentées et de confiance pour un service sur mesure. Nettoyage
+                            complet des maisons et bureaux, lavage des sols et vitres, dépoussiérage, entretien de la
+                            cuisine et sanitaires, repassage.</p>
+                    </div>
                 </div>
+
+                <div class="service-card">
+                    <img src="./images/immeubles.jpeg" alt="Nettoyage d'immeubles">
+                    <div class="service-content">
+                        <h3>🏢 Nettoyage d'immeubles</h3>
+                        <p>Entretien professionnel des parties communes et espaces résidentiels. Nettoyage des halls,
+                            escaliers, ascenseurs, cours et parkings. Service régulier pour maintenir votre immeuble
+                            toujours propre et accueillant.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
+
+        <!-- ========== SÉCURITÉ ========== -->
+        <div class="category-block securite">
+            <div class="category-header securite">
+                <span class="category-badge securite">
+                    🔐 Sécurité
+                </span>
+                <span class="category-count">3 prestations</span>
+            </div>
+
+            <div class="securite-grid">
+
+                <div class="service-card">
+                    <img src="./images/vila.jpeg" alt="Sécurité sur Villas">
+                    <div class="service-content">
+                        <h3>🏡 Sécurité sur Villas</h3>
+                        <p>Des agents de sécurité qualifiés pour la surveillance et la protection complète de votre
+                            propriété.</p>
+                        <ul class="checklist">
+                            <li>Surveillance 24h/24 et 7j/7</li>
+                            <li>Agent de sécurité dédié</li>
+                            <li>Contrôle des accès et des visiteurs</li>
+                            <li>Rondes régulières de jour comme de nuit</li>
+                            <li>Intervention rapide en cas d'incident</li>
+                            <li>Rapport de surveillance quotidien</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="./images/securite.jpeg" alt="Sécurité Résidence">
+                    <div class="service-content">
+                        <h3>🛡️ Sécurité Résidence</h3>
+                        <p>Protection et surveillance de vos résidences avec sérieux, professionnalisme et discrétion.
+                        </p>
+                        <ul class="checklist">
+                            <li>Agents qualifiés et uniformés</li>
+                            <li>Surveillance 24h/24 et 7j/7</li>
+                            <li>Contrôle d'accès des visiteurs</li>
+                            <li>Rondes régulières jour et nuit</li>
+                            <li>Protection des immeubles résidentiels</li>
+                            <li>Rapport quotidien de sécurité</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="./images/control.jpeg" alt="Centre de Surveillance">
+                    <div class="service-content">
+                        <h3>📹 Centre de Surveillance & Contrôle 24h/24</h3>
+                        <p>Un centre opérationnel 24h/24 avec technologies modernes de vidéosurveillance et équipe
+                            d'agents qualifiés.</p>
+                        <ul class="checklist">
+                            <li>Surveillance en temps réel</li>
+                            <li>Contrôle d'accès et gestion des entrées/sorties</li>
+                            <li>Intervention rapide en cas d'incident</li>
+                            <li>Suivi des rondes et rapports détaillés</li>
+                            <li>Coordination directe avec agents terrain</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </section>
 
     <!-- <section class="section why-us">
@@ -1140,7 +1395,7 @@
                     </svg>
                     <div>
                         <strong>Tarifs compétitifs</strong>
-                        <div class="caption">Excellent rapport qualité‑prix à Casablanca</div>
+                        <div class="caption">Excellent rapport qualité‑prix aux Maroc</div>
                     </div>
                 </li>
             </ul>
@@ -1173,8 +1428,8 @@
                         <div class="testimonial-name">Mohammed K.</div>
                     </div>
                 </div>
-                <p class="testimonial-text">"Service excellent pour le nettoyage de notre immeuble. Personnel
-                    professionnel et ponctuel."</p>
+                <p class="testimonial-text">"Le service de sécurité de Nahi Group Maroc est exceptionnel. Je me sens en
+                    sécurité chez moi."</p>
             </div>
 
             <div class="testimonial-card">
@@ -1275,10 +1530,19 @@
                 <img src="./images/bureau.jpeg" alt="Bureau moderne">
             </div>
             <div class="gallery-item">
+                <img src="./images/vila.jpeg" alt="Villa sécurisée">
+            </div>
+            <div class="gallery-item">
                 <img src="./images/maison.jpeg" alt="Intérieur maison propre">
             </div>
             <div class="gallery-item">
+                <img src="./images/securite.jpeg" alt="Agent de sécurité en action">
+            </div>
+            <div class="gallery-item">
                 <img src="./images/hotels.jpeg" alt="Chambre d'hôtel">
+            </div>
+            <div class="gallery-item">
+                <img src="./images/control.jpeg" alt="Centre de surveillance moderne">
             </div>
             <div class="gallery-item">
                 <img src="./images/immeubles.jpeg" alt="Hall d'immeuble">
@@ -1377,8 +1641,10 @@
                         <option value="maisons">Nettoyage de maisons/appartements</option>
                         <option value="chantier">Nettoyage fin de chantier</option>
                         <option value="domicile">Femme de ménage à domicile</option>
-                        <option value="hotels">Nettoyage d'hôtels</option>
                         <option value="immeubles">Nettoyage d'immeubles</option>
+                        <option value="securite_villas">Service de Sécurité sur Villas</option>
+                        <option value="securite_residence">Sécurité Résidence</option>
+                        <option value="centre_surveillance">Centre de Surveillance & Contrôle 24h/24</option>
                     </select>
                 </div>
 
@@ -1399,7 +1665,7 @@
 
     <footer>
         <p>&copy; <span id="currentYear"></span> Nahi Group Maroc. Tous droits réservés.</p>
-        <p>Expert en nettoyage professionnel à Rabat et Casablanca</p>
+        <p>Expert en nettoyage professionnel aux Maroc</p>
         <p style="margin-top: 0.5rem; font-size: 0.9rem;">
             Imm 9, Rue Ryad 3, Étage Appt 5, Hassan, Rabat | Tel: 0661969071
         </p>
@@ -1519,7 +1785,7 @@
     "@type": "Organization",
     "name": "Nahi Group Maroc",
     "url": "https://nahigroupmaroc.com",
-    "logo": "https://nahigroupmaroc.com/logoG.png",
+    "logo": "https://nahigroupmaroc.com/logo.jpeg",
     "sameAs": [
         "https://www.facebook.com/nahigroupmaroc",
         "https://www.instagram.com/nahigroupmaroc"

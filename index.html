@@ -105,7 +105,7 @@
             <div class="about-grid">
 
                 <div class="about-image-wrap reveal">
-                    <img src="./images/v2/nettoyage-appartements-villas.png" alt="Équipe Nahi Group Maroc" />
+                    <img src="./images/v2/team.jpeg" alt="Équipe Nahi Group Maroc" />
                     <div class="about-image-badge">
                         <strong>5+</strong>
                         Ans d'expertise<br />au Maroc
@@ -160,7 +160,7 @@
                     <div class="section-label">Ce que nous faisons</div>
                     <h2 class="section-title">Nos services principaux</h2>
                 </div>
-                <a href="#contact" class="btn-primary services-cta">Obtenir un devis</a>
+                <a href="#contact" class="btn-primary services-cta">Obtenir un devis gratuit</a>
             </div>
 
             <!-- NETTOYAGE -->
@@ -265,7 +265,7 @@
             <!-- SECURITE -->
             <div class="category-block securite">
                 <div class="cat-title">
-                    <span class="cat-pill orange">🔐 Sécurité &amp; Gardiennage — 4 prestations</span>
+                    <span class="cat-pill orange">🔐 Sécurité &amp; Gardiennage — 5 prestations</span>
                     <div class="cat-line"></div>
                 </div>
 
@@ -283,7 +283,7 @@
                     </div>
                     <div class="service-card reveal reveal-delay-1">
                         <div class="card-img-wrap">
-                            <img src="./images/v2/securite-residences-immeubles.png"
+                            <img src="./images/v2/sec-resedence.jpeg"
                                 alt="Sécurité Résidences & Immeubles" />
                         </div>
                         <div class="card-body">
@@ -296,6 +296,15 @@
                     </div>
                     <div class="service-card reveal reveal-delay-2">
                         <div class="card-img-wrap">
+                            <img src="./images/v2/sec-magasin.jpeg" alt="Agent de Sécurité – Magasin" />
+                        </div>
+                        <div class="card-body">
+                            <h3>Agent de Sécurité – Magasin</h3>
+                            <p>👀 Surveillance du magasin et des rayons<br>🚪 Contrôle des entrées et sorties<br>🛒 Prévention du vol et des incidents<br>🤝 Assistance aux clients si nécessaire<br>La sécurité et la tranquillité de tous sont notre priorité</p>
+                        </div>
+                    </div>
+                    <div class="service-card reveal reveal-delay-2">
+                        <div class="card-img-wrap">
                             <img src="./images/v2/agent-securite-parking.png" alt="Agent de Sécurité – Parking" />
                         </div>
                         <div class="card-body">
@@ -304,6 +313,15 @@
                                 tout incident<br>🅿️ Assurer l’ordre et la bonne organisation du stationnement<br>🤝
                                 Aider et orienter les clients si nécessaire<br>La sécurité et la tranquillité de tous
                                 sont notre priorité.</p>
+                        </div>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="card-img-wrap">
+                            <img src="./images/v2/sec-parck.jpeg" alt="Agent de Sécurité – Parc / Jardin" />
+                        </div>
+                        <div class="card-body">
+                            <h3>Agent de Sécurité – Parc / Jardin</h3>
+                            <p>👀 Surveillance des espaces du parc<br>🚶 Contrôle des entrées et sorties<br>🌳 Protection des installations et des espaces verts<br>🤝 Assistance et orientation des visiteurs<br>Notre objectif est de garantir un environnement sûr, calme et agréable pour tous.</p>
                         </div>
                     </div>
                     <div class="service-card reveal">
@@ -355,6 +373,8 @@
                         alt="Agent de Sécurité – Parking" loading="lazy" /></div>
                 <div class="gallery-item reveal reveal-delay-1"><img src="./images/v2/agent-securite-supermarche.png"
                         alt="Agent de Sécurité – Supermarché" loading="lazy" /></div>
+                <div class="gallery-item reveal reveal-delay-2"><img src="./images/v2/sec-parck.jpeg"
+                        alt="Agent de Sécurité – Parc / Jardin" loading="lazy" /></div>
             </div>
         </div>
     </section>
@@ -507,7 +527,9 @@
                                 <optgroup label="🔐 Sécurité">
                                     <option value="securite_banque">Agent de Sécurité – Banque</option>
                                     <option value="securite_residences">Sécurité Résidences & Immeubles</option>
+                                    <option value="securite_magasin">Agent de Sécurité – Magasin</option>
                                     <option value="securite_parking">Agent de Sécurité – Parking</option>
+                                    <option value="securite_parc">Agent de Sécurité – Parc / Jardin</option>
                                     <option value="securite_supermarche">Agent de Sécurité – Supermarché</option>
                                 </optgroup>
                             </select>
@@ -616,7 +638,7 @@
                         throw new Error('Form submission failed');
                     }
 
-                    alert('✅ Demande envoyée avec succès ! Nous vous répondrons rapidement.');
+                    alert('✅ Demande envoyée avec succès ! Nous vous répondrons rapidement.\n\nEnvoyé !');
                     form.reset();
                 } catch (_) {
                     alert('❌ Une erreur est survenue. Veuillez réessayer ou nous appeler directement.');

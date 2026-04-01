@@ -620,7 +620,7 @@
 
         document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-        // Form submit
+        // Form submit with formsubmit + PHP fallback
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.getElementById('contactForm');
             if (!form) return;
@@ -629,23 +629,49 @@
                 const btn = this.querySelector('.submit-btn');
                 btn.textContent = 'Envoi en cours…';
                 btn.disabled = true;
+                
                 try {
-                    const response = await fetch(this.action, {
-                        method: 'POST',
-                        body: new FormData(this),
-                        headers: {
-                            'Accept': 'application/json'
+                    const formData = new FormData(this);
+                    
+                    // Try formsubmit.co first
+                    try {
+                        const response = await Promise.race([
+                            fetch(this.action, {
+                                method: 'POST',
+                                body: formData,
+                                headers: { 'Accept': 'application/json' }
+                            }),
+                            new Promise((_, reject) => 
+                                setTimeout(() => reject(new Error('timeout')), 8000)
+                            )
+                        ]);
+                        
+                        if (response.ok) {
+                            alert('✅ Demande envoyée avec succès ! Nous vous répondrons rapidement.');
+                            form.reset();
+                            btn.textContent = 'Envoyer ma demande →';
+                            btn.disabled = false;
+                            return;
                         }
-                    });
-
-                    if (!response.ok) {
-                        throw new Error('Form submission failed');
+                    } catch (formsubmitError) {
+                        console.log('Formsubmit failed, switching to PHP...');
                     }
-
-                    alert('✅ Demande envoyée avec succès ! Nous vous répondrons rapidement.\n\nEnvoyé !');
-                    form.reset();
-                } catch (_) {
-                    alert('❌ Une erreur est survenue. Veuillez réessayer ou nous appeler directement.');
+                    
+                    // Fallback to local PHP
+                    const phpResponse = await fetch('./send-email.php', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    
+                    const data = await phpResponse.json();
+                    if (phpResponse.ok && data.success) {
+                        alert('✅ Demande envoyée avec succès ! Nous vous répondrons rapidement.');
+                        form.reset();
+                    } else {
+                        throw new Error(data.error || 'Erreur lors de l\'envoi');
+                    }
+                } catch (error) {
+                    alert('❌ Erreur: ' + error.message + '\nVeuillez nous appeler au 0661 969 071');
                 } finally {
                     btn.textContent = 'Envoyer ma demande →';
                     btn.disabled = false;

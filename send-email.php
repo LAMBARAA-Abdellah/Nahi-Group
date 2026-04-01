@@ -1,4 +1,9 @@
 <?php
+// Security headers
+header('Content-Type: application/json; charset=utf-8');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: POST');
+
 // Configuration
 $email_to = 'nahigroupmaroc@gmail.com';
 $email_subject = 'Nouvelle demande de devis – Nahi Group Maroc';
@@ -6,8 +11,7 @@ $email_subject = 'Nouvelle demande de devis – Nahi Group Maroc';
 // Vérifier la méthode POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
-    echo json_encode(['error' => 'Méthode non autorisée']);
-    exit;
+    die(json_encode(['error' => 'Méthode non autorisée. Utilisez POST']));
 }
 
 // Récupérer et nettoyer les données
@@ -20,33 +24,39 @@ $message = isset($_POST['message']) ? trim($_POST['message']) : '';
 // Valider les champs requis
 if (empty($name) || empty($phone) || empty($service)) {
     http_response_code(400);
-    echo json_encode(['error' => 'Champs requis manquants']);
-    exit;
+    die(json_encode(['error' => 'Champs requis manquants: nom, téléphone, service obligatoires']));
 }
 
 // Préparer le contenu de l'email
 $email_body = "Nouvelle demande de devis\n";
 $email_body .= "================================\n\n";
-$email_body .= "Nom: " . htmlspecialchars($name) . "\n";
-$email_body .= "Téléphone: " . htmlspecialchars($phone) . "\n";
-$email_body .= "Email: " . htmlspecialchars($email) . "\n";
-$email_body .= "Service: " . htmlspecialchars($service) . "\n";
-$email_body .= "\nMessage:\n" . htmlspecialchars($message) . "\n";
+$email_body .= "Nom: " . $name . "\n";
+$email_body .= "Téléphone: " . $phone . "\n";
+$email_body .= "Email: " . $email . "\n";
+$email_body .= "Service: " . $service . "\n";
+$email_body .= "\nMessage:\n" . $message . "\n";
 $email_body .= "\n================================\n";
-$email_body .= "Envoyé depuis le site: " . $_SERVER['HTTP_HOST'];
+$email_body .= "Envoyé depuis: " . (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : 'nahigroupmaroc.com');
 
-// Headers
-$headers = "From: " . ($email ? htmlspecialchars($email) : 'noreply@nahigroupmaroc.com') . "\r\n";
-$headers .= "Reply-To: " . ($email ? htmlspecialchars($email) : 'noreply@nahigroupmaroc.com') . "\r\n";
-$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+// Headers email
+$mail_headers = "From: " . ($email ? $email : 'noreply@nahigroupmaroc.com') . "\r\n";
+$mail_headers .= "Reply-To: " . ($email ? $email : 'noreply@nahigroupmaroc.com') . "\r\n";
+$mail_headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
 // Envoyer l'email
-$mail_sent = mail($email_to, $email_subject, $email_body, $headers);
-
-if ($mail_sent) {
-    http_response_code(200);
-    echo json_encode(['success' => true, 'message' => 'Email envoyé avec succès']);
-} else {
+try {
+    $mail_sent = @mail($email_to, $email_subject, $email_body, $mail_headers);
+    
+    if ($mail_sent) {
+        http_response_code(200);
+        echo json_encode(['success' => true, 'message' => 'Email envoyé avec succès']);
+    } else {
+        http_response_code(500);
+        echo json_encode(['success' => false, 'error' => 'Impossible d\'envoyer l\'email']);
+    }
+} catch (Exception $e) {
     http_response_code(500);
+    echo json_encode(['success' => false, 'error' => 'Erreur serveur: ' . $e->getMessage()]);
+}
     echo json_encode(['error' => 'Erreur lors de l\'envoi']);
 }
